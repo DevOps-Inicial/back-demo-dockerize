@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'link.grooverdev.web.api'
-version = '1.0.0-GD-USR-DOCKER'
+version = '1.0.0'
 
 java {
 	sourceCompatibility = '17'

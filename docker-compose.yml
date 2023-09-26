@@ -1,0 +1,31 @@
+#VERSION DE YML (NOTACION)
+version: "3.8"
+
+# SERVICIOS QUE DOCKER COMPOSE ADMINISTRARA. CONFIGURACION DEL GESTOR
+services:
+  db:
+    image: mongo:6.0.1-focal
+    container_name: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongoadmin
+      MONGO_INITDB_ROOT_PASSWORD: D3v310p34202X-GD
+      MONGO_INITDB_DATABASE: userdb
+    ports:
+      - "27017:27017"
+
+  # CONFIGURACION DE LA APLICACION
+  app:
+    container_name: back-demo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8083:9060"
+    environment:
+      - SPRING_DATA_MONGODB_AUTHENTICATION_DATABASE: 'admin'
+      - SPRING_DATA_MONGODB_URL: 'mongodb://localhost:27017'
+      - SPRING_DATA_MONGODB_USERNAME: 'mongoadmin'
+      - SPRING_DATA_MONGODB_PASSWORD : 'D3v310p34202X-GD'
+    depends_on:
+      - db

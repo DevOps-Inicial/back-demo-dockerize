@@ -7,6 +7,10 @@ spring:
       username: mongoadmin
       password: D3v310p34202X-GD
       database: userdb
+  devtools:
+    restart:
+      poll-interval: 2s
+      quiet-period: 1s
 server:
   port: 9060
 springdoc:

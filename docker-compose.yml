@@ -23,9 +23,9 @@ services:
     ports:
       - "8083:9060"
     environment:
-      - SPRING_DATA_MONGODB_AUTHENTICATION_DATABASE: 'admin'
-      - SPRING_DATA_MONGODB_URL: 'mongodb://localhost:27017'
-      - SPRING_DATA_MONGODB_USERNAME: 'mongoadmin'
-      - SPRING_DATA_MONGODB_PASSWORD : 'D3v310p34202X-GD'
+      - SPRING_DATA_MONGODB_AUTHENTICATION_DATABASE=admin
+      - SPRING_DATA_MONGODB_URL=mongodb://localhost:27017
+      - SPRING_DATA_MONGODB_USERNAME=mongoadmin
+      - SPRING_DATA_MONGODB_PASSWORD=D3v310p34202X-GD
     depends_on:
       - db

@@ -6,12 +6,12 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                sh "./gradlew bootJar"
+                .\gradlew.bat compileJava
             }
         }
         stage('Unit Test') {
             steps {
-                sh "./gradlew test"
+                .\gradlew.bat test
             }
         }
         stage('Code coverage') {
